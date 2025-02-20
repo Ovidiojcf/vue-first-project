@@ -23,6 +23,12 @@
     <div>
       <carsDrive :position="position === 'Frente' ? 'Atrás' : 'Frente'" @change-position="handlePosition" />
     </div>
+    <div>
+      <listMaterials/>
+    </div>
+    <div>
+      <colorPicker/>
+    </div>
   </div>
 </template>
 <!-- Para utilizar algum componente nessa página é necessário importa-lo na tag script-->
@@ -31,6 +37,8 @@
   import HelloPerson from './components/HelloPerson.vue';
   import IncreaseComponent from './components/IncreaseComponent.vue';
   import carsDrive from './components/carsDrive.vue';
+  import listMaterials from './components/listMaterials.vue';
+  import colorPicker from './components/colorPicker.vue';
 
   const name = ref("");
   const message = ref("");

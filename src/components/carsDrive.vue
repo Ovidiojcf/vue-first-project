@@ -1,20 +1,18 @@
 <template>
     <div class="cars">
         <h1>Bert Car</h1>
-        <button class="primary-button" @click="acceleratePosition()">
+        <button class="primary-button" @click="acceleratePosition">
             Accelerate
         </button>
-        <p class="p-increase">{{ position }}</p>
+        <p class="p-increase">{{ props.position }}</p>
     </div>
 </template>
 
 <script setup>
-    import { defineProps } from 'vue';
+    import { defineProps, defineEmits } from 'vue';
 
-    const emitPosition = defineEmits(['change-position']);;
-
-    const { position } = defineProps({ position: String });;
-    
+    const props = defineProps({ position: String });
+    const emitPosition = defineEmits(['change-position']);
 
     /*Função necessária para o Bert falar que acelerou*/
     function acceleratePosition(){

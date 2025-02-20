@@ -14,14 +14,14 @@
     <!-- Carro do ovidio-->
     <div class="cars">
       <h1>Ovidio Car</h1>
-      <button class="primary-button" @click="handlePosition()">
+      <button class="primary-button" @click="handlePosition">
           Accelerate
       </button>
       <p class="p-increase">{{ position }}</p>
     </div>
     <!-- Carro do Bert-->
     <div>
-      <carsDrive :position="position === 'Frente' ? 'Trás' : 'Frente'" @change-position="handlePosition()" />
+      <carsDrive :position="position === 'Frente' ? 'Atrás' : 'Frente'" @change-position="handlePosition" />
     </div>
   </div>
 </template>
@@ -41,14 +41,11 @@
   function handleNotification(msg) {
     message.value = msg;
   }
+
   /*Função necessária para o Ovídio escutar o bert caso ele acelere*/
   function handlePosition(){
     position.value = position.value === "Frente" ? "Atrás" : "Frente";
   }
-  defineProps({
-    
-  })
-  
 
 </script>
 
